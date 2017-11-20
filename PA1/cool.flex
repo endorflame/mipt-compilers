@@ -43,7 +43,7 @@ extern YYSTYPE cool_yylval;
  *  Add Your own definitions here
  */
 
-int comment_level = 0; /* to trace nested comments */
+int comment_level = 0;
 
 #define CHECK_STRING_OVERFLOW;		if(strlen(string_buf) + 1 + 1 > MAX_STR_CONST)\
                     {\
@@ -107,8 +107,6 @@ ASSIGN 		<-
 LE		<=
 
 %%
-
-*/ Nested comments */
 
 <INITIAL>--             {BEGIN(COMMENT_DASH);}
 <COMMENT_DASH><<EOF>> {
